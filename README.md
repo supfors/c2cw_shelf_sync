@@ -11,3 +11,4 @@ This script attempts to create [calibre-web](https://github.com/janeczku/calibre
 * The script does not touch shelves for which no corresponding tag(name) is found in the calibre database.
 * The script removes books from a shelf when you remove a tag from a book in calibre. (Previous note also applies here)
 * The first calibre-web login after the initial sync may take some time.
+* The shelves are assigned to the user with user_id 1. Locate 'user_id' in the script and modify it according to your user ID. (Your user ID can also be found in the URL when you navigate to Settings > Users > <your user>.)
