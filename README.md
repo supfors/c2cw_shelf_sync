@@ -1,5 +1,5 @@
 # run.py
-This script attempts to create [calibre-web](https://github.com/janeczku/calibre-web) shelves for each tag in the [calibre](https://calibre-ebook.com/) database and then associate books based on their respective tags and links in calibre. I'm using it so my shelves show up as collections on my Kobo E-reader. This script was primarily a learning experience with pandas, use at your own risk ;-).
+This script attempts to create [calibre-web](https://github.com/janeczku/calibre-web) shelves for each tag in the [calibre](https://calibre-ebook.com/) database and then associate books based on their respective tags and links in calibre. I'm using it so my tags show up as collections on my Kobo E-reader. This script was primarily a learning experience with pandas, use at your own risk ;-).
 
 # Getting started
 :warning: **Make sure you have a back-up of your calibre-web database before you start.**
