@@ -14,6 +14,7 @@ current_date = datetime.now()
 
 calibre_db = sqlite3.connect("/path/to/metadata.db")
 calibre_web_db = sqlite3.connect("/path/to/app.db")
+calibre_web_user_id = 1
 
 df_book_shelf_link = pd.read_sql_query(
     "SELECT book_id, shelf FROM book_shelf_link", calibre_web_db
@@ -27,7 +28,7 @@ df_books_tags_link = pd.read_sql_query(
 
 
 def get_shelves():
-    return pd.read_sql_query("SELECT id, name from shelf", calibre_web_db)
+    return pd.read_sql_query(f"SELECT id, name from shelf WHERE user_id='{calibre_web_user_id}'", calibre_web_db)
 
 def add_shelves():
     # Create a shelf for each tag in calibre database.
@@ -52,7 +53,7 @@ def add_shelves():
             new_row = {
                 'name': tag_name,
                 'is_public': int(0),
-                'user_id': int(1),
+                'user_id': int(calibre_web_user_id),
                 'uuid': str(row_uuid),
                 'created': str(current_date),
                 'last_modified': str(current_date),
